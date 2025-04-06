@@ -15,3 +15,9 @@ syntax on
 
 " Add numbers to each line on the left-hand side.
 set number
+
+" gallium nav bindings 
+" nmap p <Up>
+" nmap h <Left>
+" nmap a <Down>
+" nmap e <Right>
