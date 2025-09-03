@@ -1,0 +1,27 @@
+#etc/systemd/system
+
+[Unit]
+Description=Kanata keyboard remapper
+Documentation=https://github.com/jtroo/kanata
+Requires=local-fs.target
+After=local-fs.target
+
+[Service]
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+Environment=DISPLAY=:0
+Environment=HOME=/home/michealbear
+
+BindReadOnlyPaths=/usr/local/bin/kanata/
+Type=simple
+ExecStart=  /usr/local/bin/kanata/kanata --cfg /usr/local/bin/kanata/Gallium1.cfg
+Restart=never
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=kanata
+User=root
+Group=root
+
+[Install]
+#WantedBy=default.target
+WantedBy=multi-user.target
