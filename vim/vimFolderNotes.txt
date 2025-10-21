@@ -1,11 +1,16 @@
 mkdir .vim 
 cd .vim 
-mkdir autoload
+mkdir autoload ftplugin plugged plugin
+
+#inside autoload
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mkdir ftplugin
+
+#inside ftplugin
 #put make.vim & tex.vim inside
-mkdir plugged 
+
+#inside plugged 
 #vimtex
-mkdir plugin
+
+#inside plugin
 #put vimtex.vim inside
