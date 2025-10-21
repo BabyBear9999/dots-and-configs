@@ -10,6 +10,16 @@ filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
 
+" This will only work if `vim --version` includes `+clientserver`!
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')
+endif
+
+"weeee tab settings"
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
 " Turn syntax highlighting on.
 syntax on
 
@@ -17,24 +27,24 @@ syntax on
 set number
 
 "UTF8 character encoding enabled (enabled by default in Neovim) "
- 20 set encoding=utf-8
+set encoding=utf-8
 
-" gallium nav bindings 
-" nmap p <Up>
-" nmap h <Left>
-" nmap a <Down>
-" nmap e <Right>
+" gallium nav bindings "
+" nmap p <Up>  "
+" nmap h <Left> "
+" nmap a <Down> "
+" nmap e <Right> "
 
 call plug#begin()
- 29 
- 30 " List your plugins here
- 31 "Plug 'tpope/vim-sensible'"
- 32 
- 33 Plug 'lervag/vimtex'
- 34 Plug 'lervag/vimtex', { 'tag': 'v2.15' }
- 35 
- 36 "  :PlugInstall to install the plugins  :PlugUpdate to install or update the plugins
- 37 "  :PlugDiff to review the changes from the last update :PlugClean to remove plugins no longer in the list
- 38 
- 39 
- 40 call plug#end()
+
+" List your plugins here
+"Plug 'tpope/vim-sensible'"
+
+Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'tag': 'v2.15' }
+
+"  :PlugInstall to install the plugins  :PlugUpdate to install or update the plugins
+"  :PlugDiff to review the changes from the last update :PlugClean to remove plugins no longer in the list
+
+
+call plug#end()
